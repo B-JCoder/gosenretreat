@@ -1,59 +1,72 @@
-"use client"
 import { Button } from "@/components/ui/button"
+import { Laptop, ShieldCheck, Clock } from "lucide-react"
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image */}
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center "
+    >
+      {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url('/peaceful-forest-sunrise-with-soft-green-light-filt.jpg')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-[#A8D5BA]/20"></div>
+        {/* Light Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/20 to-green-200/20"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-            Exceptional Care for a <span className="text-green-700">Healthier Mind</span>
-          </h1>
+      <div className="relative z-10 text-center max-w-5xl mx-auto bg-white/7 backdrop-blur-md p-8 rounded-xl shadow-lg">
+        {/* Heading */}
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-snug drop-shadow-md">
+          Compassionate Mental Health Care
+        </h1>
 
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
-            Gosen Retreat helps you find peace and clarity through personalized mental wellness programs.
-          </p>
+        {/* Subheading */}
+        <p className="mt-3 text-lg md:text-xl text-green-700 font-semibold drop-shadow-sm">
+          Support for every stage of life
+        </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-           <Button
-  size="lg"
-  className="bg-[#FF6F91] hover:bg-[#e55a7a] text-white px-8 py-4 text-lg"
-  onClick={() => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-  Book a Free Consultation
-</Button>
+        {/* Description */}
+        <p className="mt-5 text-base md:text-lg text-gray-800 leading-relaxed bg-white/60 backdrop-blur-sm px-4 py-2 rounded-xl inline-block">
+          Personalized therapy and medication management to help children,
+          adolescents, and adults find clarity, stability, and healing all
+          from the comfort of your home.
+        </p>
 
-<Button
-  size="lg"
-  variant="outline"
-  className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white px-8 py-4 text-lg bg-transparent"
-  onClick={() => {
-    const servicesSection = document.getElementById("services");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-  Explore Services
-</Button>
+        {/* Features */}
+        <div className="flex flex-wrap justify-center gap-3 mt-8">
+          <span className="flex items-center gap-2 bg-white/70 backdrop-blur-sm text-green-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+            <Laptop className="w-4 h-4" /> Remote Sessions
+          </span>
+          <span className="flex items-center gap-2 bg-white/70 backdrop-blur-sm text-green-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+            <ShieldCheck className="w-4 h-4" /> HIPAA Compliant
+          </span>
+          <span className="flex items-center gap-2 bg-white/70 backdrop-blur-sm text-green-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+            <Clock className="w-4 h-4" /> Flexible Scheduling
+          </span>
+        </div>
 
-          </div>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <Button
+            size="lg"
+            className="bg-[#FF6F91] hover:bg-[#e55a7a] text-white px-8 py-4 text-lg rounded-full shadow-lg"
+            asChild
+          >
+            <a href="/booking">Book Consultation</a>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white px-8 py-4 text-lg rounded-full shadow-lg bg-white/80 backdrop-blur-sm"
+            asChild
+          >
+            <a href="#services">Explore Services</a>
+          </Button>
         </div>
       </div>
     </section>

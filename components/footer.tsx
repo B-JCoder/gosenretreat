@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Mail, Phone, Video, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -12,16 +12,16 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <Image
-                src="/images/logodemo.png"
+                src="/images/gosen-logo-full.png"
                 alt="Gosen Retreat"
                 width={180}
-                height={120}
-                className="h-44 w-auto"
+                height={60}
+                className="h-14 w-auto"
               />
             </div>
             <p className="text-gray-700 mb-6 leading-relaxed max-w-md">
               Gosen Retreat is dedicated to providing exceptional mental health care through personalized,
-              compassionate, and accessible online therapy services.
+              compassionate, and accessible remote psychiatric services.
             </p>
             <div className="flex space-x-4">
               <Button size="sm" variant="ghost" className="text-gray-600 hover:bg-gray-100 hover:text-black p-2">
@@ -64,8 +64,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-600 hover:text-black transition-colors">
-                  Testimonials
+                <a href="/booking" className="text-gray-600 hover:text-black transition-colors">
+                  Book Appointment
                 </a>
               </li>
               <li>
@@ -97,23 +97,26 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600">
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />
-              <span>FL: (555) 123-4567 | NY: (555) 987-6543</span>
+              <a href="tel:954-366-8644" className="hover:text-black transition-colors">
+                954-366-8644
+              </a>
             </div>
             <div className="flex items-center">
               <Mail className="w-4 h-4 mr-2" />
-              <span>hello@gosenretreat.com</span>
+              <a href="mailto:Robertcarine@hotmail.com" className="hover:text-black transition-colors">
+                Robertcarine@hotmail.com
+              </a>
             </div>
             <div className="flex items-center">
-              <MapPin className="w-4 h-4 mr-2" />
-              <span>Serving Florida & New York</span>
+              <Video className="w-4 h-4 mr-2" />
+              <span>Remote-Only Practice</span>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-          <p>&copy; 2025 Gosen Retreat. All rights reserved.</p>  
-          <p>Powered by The Linkage Digital </p>  
+          <p>&copy; 2025 Gosen Retreat. All rights reserved.</p>
          
         </div>
       </div>
