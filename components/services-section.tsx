@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Heart, Globe, Calendar, Award, Brain, Pill, Laptop } from "lucide-react"
 
 export default function ServicesSection() {
   const services = [
     {
-      icon: "🧠",
+      icon: <Brain className="w-6 h-6 text-white" />,
       title: "Therapy & Counseling",
       description: "Comprehensive therapeutic approaches tailored to your individual needs and goals.",
       features: [
@@ -14,7 +15,7 @@ export default function ServicesSection() {
       ],
     },
     {
-      icon: "💊",
+      icon: <Pill className="w-6 h-6 text-white" />,
       title: "Medication Management",
       description:
         "Safe, evidence-based prescribing and ongoing monitoring to ensure the best results for your mental health.",
@@ -26,7 +27,7 @@ export default function ServicesSection() {
       ],
     },
     {
-      icon: "💻",
+      icon: <Laptop className="w-6 h-6 text-white" />,
       title: "Telepsychiatry",
       description: "Secure and flexible online sessions—making care more accessible for busy lifestyles.",
       features: [
@@ -39,88 +40,58 @@ export default function ServicesSection() {
   ]
 
   const whyChooseUs = [
-    {
-      icon: "🏆",
-      title: "Board-Certified PMHNP",
-      description: "Over 27 years of experience in psychiatry & medical care",
-    },
-    {
-      icon: "🌍",
-      title: "Multilingual Care",
-      description: "Services in English, French, and Haitian Creole",
-    },
-    {
-      icon: "❤️",
-      title: "Compassionate Care",
-      description: "Culturally responsive, evidence-based treatment",
-    },
-    {
-      icon: "📅",
-      title: "Flexible Scheduling",
-      description: "Convenient telehealth options that fit your life",
-    },
+    { icon: <Award className="w-6 h-6 text-white" />, title: "Board-Certified PMHNP", description: "27+ years of psychiatry & medical care" },
+    { icon: <Globe className="w-6 h-6 text-white" />, title: "Multilingual Care", description: "English, French & Haitian Creole" },
+    { icon: <Heart className="w-6 h-6 text-white" />, title: "Compassionate Care", description: "Culturally responsive treatment" },
+    { icon: <Calendar className="w-6 h-6 text-white" />, title: "Flexible Scheduling", description: "Telehealth options that fit your life" },
   ]
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="services"
+      className="relative py-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('https://i.pinimg.com/1200x/95/50/7b/95507ba220ef508566c715ed9a6e13b1.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-balance">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Our <span className="text-[#A8D5BA]">Services</span>
           </h2>
           <div className="w-20 h-1 bg-[#FF6F91] rounded-full mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-pretty leading-relaxed">
+          <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Comprehensive mental health support combining therapy and medication management
           </p>
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Why Choose Gosen Retreat</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((benefit, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-[#A8D5BA]/10 to-[#F7C6D9]/10 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#A8D5BA] to-[#F7C6D9] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">{benefit.icon}</span>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
-                <p className="text-sm text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+            <Card key={index} className="group hover:shadow-xl transition-all border-0 shadow-lg bg-white/90 backdrop-blur">
               <CardContent className="p-8">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-[#A8D5BA] to-[#F7C6D9] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl">{service.icon}</span>
+                <div className="w-14 h-14 bg-gradient-to-br from-[#A8D5BA] to-[#F7C6D9] rounded-xl flex items-center justify-center mb-6">
+                  {service.icon}
                 </div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">{service.description}</p>
 
-                {/* Features */}
                 <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-gray-600">
-                      <div className="w-2 h-2 bg-[#A8D5BA] rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-start text-gray-700">
+                      <div className="w-2 h-2 bg-[#A8D5BA] rounded-full mr-3 mt-2"></div>
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* CTA Button */}
                 <Button
                   variant="outline"
-                  className="w-full border-green-600 text-green-700 hover:bg-green-600 hover:text-white transition-colors duration-300 bg-transparent"
+                  className="w-full border-green-600 text-green-700 hover:bg-green-600 hover:text-white transition"
                 >
                   Learn More
                 </Button>
@@ -128,29 +99,35 @@ export default function ServicesSection() {
             </Card>
           ))}
         </div>
-
+  {/* Why Choose Us */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8">Why Choose Gosen Retreat</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUs.map((benefit, index) => (
+              <div
+                key={index}
+                className="text-center p-6 rounded-xl bg-gradient-to-br from-[#A8D5BA]/30 to-[#F7C6D9]/30 hover:shadow-lg transition-all"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-[#A8D5BA] to-[#F7C6D9] rounded-full flex items-center justify-center mx-auto mb-4">
+                  {benefit.icon}
+                </div>
+                <h4 className="font-semibold mb-2">{benefit.title}</h4>
+                <p className="text-sm text-white/90">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* CTA */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] rounded-2xl p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 text-balance">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               What to Expect in Your First Session
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 text-white/90">
-              <div className="flex items-center justify-center">
-                <span className="mr-2">🤝</span>
-                <span>A safe and open space to share your concerns</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="mr-2">📋</span>
-                <span>A full review of your history and goals</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="mr-2">💬</span>
-                <span>Discussion of therapy and/or medication options</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <span className="mr-2">📝</span>
-                <span>A personalized treatment plan designed just for you</span>
-              </div>
+              <div className="flex items-center justify-center">🤝 Safe & open space</div>
+              <div className="flex items-center justify-center">📋 Review of history & goals</div>
+              <div className="flex items-center justify-center">💬 Therapy/medication options</div>
+              <div className="flex items-center justify-center">📝 Personalized plan</div>
             </div>
             <Button size="lg" className="bg-white text-[#A8D5BA] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
               Schedule Your Appointment Now
