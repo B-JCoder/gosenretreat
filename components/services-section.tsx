@@ -50,7 +50,7 @@ export default function ServicesSection() {
     <section
       id="services"
       className="relative py-20 bg-cover bg-center"
-      style={{ backgroundImage: "url('https://i.pinimg.com/1200x/1b/27/6d/1b276d52035821c5f6cd032f0bf707f5.jpg')" }}
+      style={{ backgroundImage: "url('https://i.pinimg.com/1200x/99/93/36/9993360536886fb8a3d76b50c9e9acb3.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
