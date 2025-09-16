@@ -6,51 +6,63 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
 
 export default function BookingForm() {
   const [step, setStep] = useState(1);
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
   const times = [
-    "9:00 AM - 10:00 AM PDT",
-    "9:30 AM - 10:30 AM PDT",
-    "10:00 AM - 11:00 AM PDT",
-    "10:30 AM - 11:30 AM PDT",
-    "11:00 AM - 12:00 PM PDT",
-    "11:30 AM - 12:30 PM PDT",
+    "9:00 AM - 10:00 AM",
+    "9:30 AM - 10:30 AM",
+    "10:00 AM - 11:00 AM",
+    "10:30 AM - 11:30 AM",
+    "11:00 AM - 12:00 PM",
+    "11:30 AM - 12:30 PM",
   ];
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <Card className="shadow-lg rounded-2xl">
-        <CardContent className="space-y-6">
+      <Card className="shadow-xl rounded-2xl border-none bg-gradient-to-br from-[#A8D5BA]/10 to-[#F7C6D9]/10">
+        <CardContent className="space-y-8 p-8">
           
           {/* STEP 1: Date & Time */}
           {step === 1 && (
-            <div>
-              <h2 className="text-xl font-semibold mb-4">Select a day and time for your virtual session</h2>
-              
-              {/* Calendar (simplified for demo) */}
-              <div className="grid grid-cols-7 gap-2 mb-6">
-                {Array.from({ length: 30 }, (_, i) => (
-                  <Button
-                    key={i}
-                    variant={selectedDate === `${i + 1}` ? "default" : "outline"}
-                    onClick={() => setSelectedDate(`${i + 1}`)}
-                  >
-                    {i + 1}
-                  </Button>
-                ))}
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] bg-clip-text text-transparent">
+                Select a day and time for your virtual session
+              </h2>
+
+              {/* Calendar */}
+              <div className="flex justify-center">
+                <DayPicker
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={setSelectedDate}
+                  styles={{
+                    caption: { color: "white" },
+                    day: { borderRadius: "9999px" },
+                    day_selected: {
+                      backgroundColor: "#A8D5BA",
+                      color: "white",
+                    },
+                  }}
+                />
               </div>
 
               {/* Time Slots */}
-              <div className="space-y-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {times.map((time) => (
                   <Button
                     key={time}
                     variant={selectedTime === time ? "default" : "outline"}
-                    className="w-full justify-start"
+                    className={`rounded-xl py-3 font-medium transition ${
+                      selectedTime === time
+                        ? "bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] text-white shadow-lg"
+                        : "hover:border-[#A8D5BA] hover:text-[#A8D5BA]"
+                    }`}
                     onClick={() => setSelectedTime(time)}
                   >
                     {time}
@@ -58,10 +70,11 @@ export default function BookingForm() {
                 ))}
               </div>
 
-              <div className="flex justify-end mt-4">
+              <div className="flex justify-end">
                 <Button
                   disabled={!selectedDate || !selectedTime}
                   onClick={() => setStep(2)}
+                  className="bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] text-white px-6 py-3 rounded-xl font-semibold"
                 >
                   Next
                 </Button>
@@ -71,8 +84,10 @@ export default function BookingForm() {
 
           {/* STEP 2: Client Information */}
           {step === 2 && (
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold">Client Information</h2>
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] bg-clip-text text-transparent">
+                Client Information
+              </h2>
               
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -139,17 +154,30 @@ export default function BookingForm() {
                 <Input placeholder="Zip code" />
               </div>
 
-              <div className="flex justify-between mt-4">
-                <Button variant="outline" onClick={() => setStep(1)}>Back</Button>
-                <Button onClick={() => setStep(3)}>Next</Button>
+              <div className="flex justify-between mt-6">
+                <Button
+                  variant="outline"
+                  onClick={() => setStep(1)}
+                  className="rounded-xl"
+                >
+                  Back
+                </Button>
+                <Button
+                  onClick={() => setStep(3)}
+                  className="bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] text-white rounded-xl px-6 py-3"
+                >
+                  Next
+                </Button>
               </div>
             </div>
           )}
 
           {/* STEP 3: Insurance */}
           {step === 3 && (
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold">Insurance Information</h2>
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] bg-clip-text text-transparent">
+                Insurance Information
+              </h2>
               
               <div>
                 <Label>Insurance Name *</Label>
@@ -160,9 +188,17 @@ export default function BookingForm() {
                 <Input placeholder="1234567891" />
               </div>
 
-              <div className="flex justify-between mt-4">
-                <Button variant="outline" onClick={() => setStep(2)}>Back</Button>
-                <Button className="bg-green-600 hover:bg-green-700">Submit</Button>
+              <div className="flex justify-between mt-6">
+                <Button
+                  variant="outline"
+                  onClick={() => setStep(2)}
+                  className="rounded-xl"
+                >
+                  Back
+                </Button>
+                <Button className="bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] text-white rounded-xl px-6 py-3">
+                  Submit
+                </Button>
               </div>
             </div>
           )}
