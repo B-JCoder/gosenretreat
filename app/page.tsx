@@ -8,6 +8,7 @@ import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import HeroSection from "@/components/hero-section"
 import BookingForm from "@/components/BookingForm"
+import WhyChoose from "@/components/WhyChoose"
 
 export default function GosenRetreatPage() {
   return (
@@ -16,6 +17,7 @@ export default function GosenRetreatPage() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+        <WhyChoose />
       <TestimonialsSection />
       <PricingSection />
       <ContactSection />

@@ -100,40 +100,8 @@ export default function ServicesSection() {
           ))}
         </div>
   {/* Why Choose Us */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Why Choose Gosen Retreat</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((benefit, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-[#A8D5BA]/30 to-[#F7C6D9]/30 hover:shadow-lg transition-all"
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#A8D5BA] to-[#F7C6D9] rounded-full flex items-center justify-center mx-auto mb-4">
-                  {benefit.icon}
-                </div>
-                <h4 className="font-semibold mb-2">{benefit.title}</h4>
-                <p className="text-sm text-white/90">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-[#A8D5BA] to-[#F7C6D9] rounded-2xl p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              What to Expect in Your First Session
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 text-white/90">
-              <div className="flex items-center justify-center">🤝 Safe & open space</div>
-              <div className="flex items-center justify-center">📋 Review of history & goals</div>
-              <div className="flex items-center justify-center">💬 Therapy/medication options</div>
-              <div className="flex items-center justify-center">📝 Personalized plan</div>
-            </div>
-            <Button size="lg" className="bg-white text-[#A8D5BA] hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-              Schedule Your Appointment Now
-            </Button>
-          </div>
-        </div>
+       
+       
       </div>
     </section>
   )
