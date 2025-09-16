@@ -25,7 +25,7 @@ export default function Navigation() {
             <Image
               src="/images/logodemo.png"
               alt="Gosen Retreat Logo"
-              width={140}
+              width={160}
               height={40}
               className="object-contain"
               priority
