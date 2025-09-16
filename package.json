@@ -78,5 +78,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-JCoder/gosenretreat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/B-JCoder/gosenretreat/issues"
+  },
+  "homepage": "https://github.com/B-JCoder/gosenretreat#readme",
   "description": ""
 }
