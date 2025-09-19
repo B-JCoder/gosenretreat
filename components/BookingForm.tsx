@@ -155,7 +155,7 @@ export default function BookingForm() {
       submitData.append("_template", "table")
 
       // Submit to FormSubmit
-      const response = await fetch("https://formsubmit.co/bilalcodes777@gmail.com", {
+      const response = await fetch("https://formsubmit.co/Robertcarine@hotmail.com", {
         method: "POST",
         body: submitData,
       })
