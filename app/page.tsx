@@ -3,11 +3,9 @@ import Navigation from "@/components/navigation"
 import AboutSection from "@/components/about-section"
 import ServicesSection from "@/components/services-section"
 import TestimonialsSection from "@/components/testimonials-section"
-import PricingSection from "@/components/pricing-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import HeroSection from "@/components/hero-section"
-import BookingForm from "@/components/BookingForm"
 import WhyChoose from "@/components/WhyChoose"
 
 export default function GosenRetreatPage() {
@@ -19,9 +17,9 @@ export default function GosenRetreatPage() {
       <ServicesSection />
         <WhyChoose />
       <TestimonialsSection />
-      <PricingSection />
+  
       <ContactSection />
-      <BookingForm />
+      
       <Footer />
 
       <div className="fixed bottom-6 right-6 z-50">
