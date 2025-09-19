@@ -8,12 +8,11 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Testimonials", href: "/#testimonials" },
+    { name: "Contact", href: "/#contact" },
   ]
 
   return (

@@ -58,11 +58,7 @@ export default function Footer() {
                   Services
                 </a>
               </li>
-              <li>
-                <a href="#pricing" className="text-gray-600 hover:text-black transition-colors">
-                  Pricing
-                </a>
-              </li>
+           
               <li>
                 <a href="/booking" className="text-gray-600 hover:text-black transition-colors">
                   Book Appointment

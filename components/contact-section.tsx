@@ -101,23 +101,7 @@ export default function ContactSection() {
             </div>
 
             {/* Emergency Contact */}
-            <Card className="border-2 border-[#FF6F91] bg-[#FF6F91]/5">
-              <CardContent className="p-6">
-                <h4 className="font-bold text-[#FF6F91] mb-2">Crisis Support</h4>
-                <p className="text-gray-900 mb-3">If you're experiencing a mental health emergency, please contact:</p>
-                <div className="space-y-1 text-sm">
-                  <p>
-                    <strong>National Suicide Prevention Lifeline:</strong> 988
-                  </p>
-                  <p>
-                    <strong>Crisis Text Line:</strong> Text HOME to 741741
-                  </p>
-                  <p>
-                    <strong>Emergency Services:</strong> 911
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+          
           </div>
         </div>
       </div>
