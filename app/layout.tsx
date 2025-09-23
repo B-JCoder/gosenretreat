@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Gosen Retreat",
     images: [
       {
-        url: "/images/gosen-logo-full.png",
+        url: "/images/logodemo.png",
         width: 1200,
         height: 630,
         alt: "Gosen Retreat - Online Psychiatric Clinic",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Gosen Retreat - Online Psychiatric Clinic",
     description:
       "Professional remote psychiatric care and mental health services. Expert online therapy and psychiatric consultations.",
-    images: ["/images/gosen-logo-full.png"],
+    images: ["/images/logodemo.png"],
   },
   robots: {
     index: true,
