@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Leaf, Brain, Users, Sparkles } from "lucide-react"
-
+import Link from "next/link"
 const benefits = [
   {
     icon: <Leaf className="w-7 h-7 text-white" />,
@@ -75,12 +75,14 @@ export default function WhyChoose() {
                 <div className="flex items-center justify-center">💬 Therapy & Medication Options</div>
                 <div className="flex items-center justify-center">📝 Personalized Plan</div>
               </div>
-              <Button
-                size="lg"
-                className="bg-white text-[#A855F7] hover:bg-gray-100 px-10 py-5 text-lg font-bold rounded-xl shadow-md"
-              >
-                Schedule Your Appointment Now
-              </Button>
+           <Link href="/booking">
+  <Button
+    size="lg"
+    className="bg-white text-[#A855F7] hover:bg-gray-100 px-10 py-5 text-lg font-bold rounded-xl shadow-md"
+  >
+    Schedule Your Appointment Now
+  </Button>
+</Link>
             </div>
           </div>
         </div>

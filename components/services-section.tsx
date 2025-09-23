@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Globe, Calendar, Award, Brain, Pill, Laptop } from "lucide-react"
+import Link from "next/link"
+
 
 export default function ServicesSection() {
   const services = [
@@ -89,12 +91,14 @@ export default function ServicesSection() {
                   ))}
                 </ul>
 
-                <Button
-                  variant="outline"
-                  className="w-full border-green-600 text-green-700 hover:bg-green-600 hover:text-white transition"
-                >
-                  Get Qoute
-                </Button>
+              <Link href="/booking">
+  <Button
+    variant="outline"
+    className="w-full border-green-600 text-green-700 hover:bg-green-600 hover:text-white transition"
+  >
+    Get Quote
+  </Button>
+</Link>
               </CardContent>
             </Card>
           ))}
