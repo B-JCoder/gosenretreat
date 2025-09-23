@@ -13,7 +13,7 @@ export default function AboutSection() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/peaceful-therapy-session-with-therapist-and-patien.jpg"
+                  src="https://i.pinimg.com/1200x/ed/fb/dd/edfbdda29f5c638080e6d92bf8c256e9.jpg"
                   alt="Remote therapy session"
                   width={600}
                   height={400}
