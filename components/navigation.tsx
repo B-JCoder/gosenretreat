@@ -42,9 +42,13 @@ export default function Navigation() {
                 {item.name}
               </a>
             ))}
-            <Button className="bg-[#FF6F91] hover:bg-[#e55a7a] text-white" asChild>
-              <a href="/booking">Book Consultation</a>
-            </Button>
+          <Button
+  className="bg-[#196A76] hover:bg-[#14575f] text-white rounded-full shadow-md"
+  asChild
+>
+  <a href="/booking">Book Consultation</a>
+</Button>
+
           </div>
 
           {/* Mobile menu button */}
@@ -79,11 +83,15 @@ export default function Navigation() {
                 {item.name}
               </a>
             ))}
-            <div className="px-3 py-2">
-              <Button className="w-full bg-[#FF6F91] hover:bg-[#e55a7a] text-white" asChild>
-                <a href="/booking">Book Consultation</a>
-              </Button>
-            </div>
+          <div className="px-3 py-2">
+  <Button
+    className="w-full bg-[#196A76] hover:bg-[#14575f] text-white rounded-full shadow-md"
+    asChild
+  >
+    <a href="/booking">Book Consultation</a>
+  </Button>
+</div>
+
           </div>
         </div>
       )}

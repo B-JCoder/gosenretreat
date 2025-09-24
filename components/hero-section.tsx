@@ -52,21 +52,23 @@ export default function HeroSection() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <Button
-            size="lg"
-            className="bg-[#FF6F91] hover:bg-[#e55a7a] text-white px-8 py-4 text-lg rounded-full shadow-lg"
-            asChild
-          >
-            <a href="/booking">Book Consultation</a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-green-700 text-green-700 hover:bg-green-700 hover:text-white px-8 py-4 text-lg rounded-full shadow-lg bg-white/80 backdrop-blur-sm"
-            asChild
-          >
-            <a href="#services">Explore Services</a>
-          </Button>
+     <Button
+  size="lg"
+  className="bg-[#196A76] hover:bg-[#14565F] text-white px-8 py-4 text-lg rounded-full shadow-lg"
+  asChild
+>
+  <a href="/booking">Book Consultation</a>
+</Button>
+
+<Button
+  size="lg"
+  variant="outline"
+  className="border-[#87D0C7] text-[#196A76] hover:bg-[#87D0C7] hover:text-white px-8 py-4 text-lg rounded-full shadow-lg bg-white/80 backdrop-blur-sm"
+  asChild
+>
+  <a href="#services">Explore Services</a>
+</Button>
+
         </div>
       </div>
     </section>
